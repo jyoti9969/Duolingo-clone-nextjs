@@ -1,6 +1,6 @@
 import { MobileHeader } from "@/components/mobile-header";
 import { Sidebar } from "@/components/sidebar";
-
+import { ClerkProvider } from "@clerk/nextjs";
 
 type Props={
     children:React.ReactNode;
@@ -8,6 +8,7 @@ type Props={
 const MainLayout=({children}:Props)=>{
 return(
     <>
+    <ClerkProvider>
     <MobileHeader />
     <Sidebar className="hidden lg:flex" />
     <main className="lg:pl-[256px] h-full pt-[50px] lg:pt-0">  
@@ -15,6 +16,7 @@ return(
         {children}
     </div>
     </main>
+    </ClerkProvider>
 
    
     </>

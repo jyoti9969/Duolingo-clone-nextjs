@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { SidebarItem } from "@/components/sidebar-item"
-import { ClerkLoaded,ClerkLoading,UserButton,ClerkProvider } from "@clerk/nextjs"
+import { ClerkLoaded,ClerkLoading,UserButton } from "@clerk/nextjs"
 import { Loader } from "lucide-react"
 type Props={
     className?:string,
@@ -43,17 +43,18 @@ label="shop"
         </div>
 
         <div className="p-4">
-     <ClerkProvider>
+     
      <ClerkLoading>
     <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
 </ClerkLoading>
-   
 <ClerkLoaded>
     <UserButton afterSignOutUrl="/" />
 </ClerkLoaded>
-</ClerkProvider>
 
         </div>
         </div>
     )
 }
+
+
+
